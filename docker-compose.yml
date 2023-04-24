@@ -1,10 +1,24 @@
 version: "3"
 
 services:
-  chatgpt-discord-bot:
+  lea-bot:
     build: .
-    image: chatgpt-discord-bot
-    container_name: chatgpt-discord-bot
-    env_file:
-      - .env
+    image: lea-bot
+    container_name: lea-bot
     restart: unless-stopped
+    environment:
+      DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN}
+      UNOFFICIAL_PAID: ${UNOFFICIAL_PAID}
+      PUID: ${PUID}
+      ACCESS_TOKEN: ${ACCESS_TOKEN}
+      OPENAI_EMAIL: ${OPENAI_EMAIL}
+      OPENAI_PASSWORD: ${OPENAI_PASSWORD}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      #      BARD_SESSION_ID=
+      CHAT_MODEL: ${CHAT_MODEL}
+      GPT_ENGINE: ${GPT_ENGINE}
+      LOGGING: ${LOGGING}
+      REPLYING_ALL: ${REPLYING_ALL}
+      DISCORD_CHANNEL_ID: ${DISCORD_CHANNEL_ID}
+      #      REPLYING_ALL_DISCORD_CHANNEL_ID=
+
